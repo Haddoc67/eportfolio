@@ -79,14 +79,15 @@
       </section>
 
       <section class="admin-card">
-        <h2>Export / Data</h2>
-        <p class="muted">Data gemmes i browseren (localStorage) indtil du eksporterer JSON og uploader til GitHub.</p>
-        <div class="actions">
-          <button class="btn" id="exportCounts">Download counts.json</button>
-          <button class="btn" id="exportAll">Download all module JSON</button>
-          <button class="btn" id="clearData">Clear local data</button>
-        </div>
-        <p class="muted" style="margin-top:8px">Upload de downloadede filer til <code>assets/data/</code> i dit repo. Forsiden viser badges, og modul-sider kan hente data senere.</p>
+       <h2>Export / Data</h2>
+<p class="muted" style="margin-bottom: 10px;">Data is stored in your browser (localStorage) until you export the JSON and upload it to GitHub.</p>
+<ul>
+    <li><strong>Download counts.json</strong> – Saves the artefact counters for the homepage.</li>
+    <li><strong>Download all module JSON</strong> – Saves all artefacts for every module.</li>
+    <li><strong>Clear local data</strong> – Deletes all locally stored data in the browser.</li>
+</ul>
+<p class="muted">Upload the downloaded files to <code>assets/data/</code> in your repository. The homepage shows module badges, and the module pages can load and display the data.</p>
+
       </section>
     </div>
 
