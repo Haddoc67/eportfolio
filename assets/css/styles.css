@@ -61,3 +61,28 @@ a:hover{text-decoration:underline}
 .contact-list{line-height:2}
 .notes{padding-left:18px}
 .notes li{margin:6px 0}
+
+/* Count badge for module tiles */
+.tile {
+  position: relative;
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  display: inline-block;
+  min-width: 26px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #1f2d4a;
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 6px 14px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+  color: #e6eefc;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1;
+}
+
+
+
+
