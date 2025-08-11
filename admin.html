@@ -1,87 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MSc Cyber Security e‑Portfolio</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <meta name="description" content="MSc Cyber Security e‑Portfolio for Your Name" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin – e-Portfolio</title>
+<link rel="stylesheet" href="assets/css/styles.css" />
+<style>
+  .admin-wrap{max-width:900px;margin:0 auto;padding:24px}
+  .admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .admin-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,0));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}
+  .admin-card h2{margin:0 0 12px}
+  .admin-form label{display:block;margin:8px 0}
+  .admin-form input, .admin-form select, .admin-form textarea{
+    width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0f1627;color:#e6eefc
+  }
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#121a2b;color:#e6eefc;cursor:pointer}
+  .btn:hover{background:#1a2439}
+  .list{margin-top:12px}
+  .list .row{display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;margin-bottom:8px}
+  .muted{color:#b7c2d9}
+  .pill{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.12)}
+  .pill-post{background:#15243f}.pill-essay{background:#2a233f}.pill-report{background:#233f2a}.pill-video{background:#3f2323}
+</style>
 </head>
-
 <body>
   <header class="site-header">
     <div class="brand">
-      <div class="brand-title">Jens Kolby</div>
+      <div class="brand-title">Admin</div>
       <div class="brand-subtitle">MSc Cyber Security e-Portfolio</div>
     </div>
     <nav id="nav">
       <ul class="menu">
         <li class="menu-item"><a href="index.html">Home</a></li>
-        <li class="menu-item"><a href="about.html">About</a></li>
-        <li class="menu-item has-dropdown">
-          <a href="#">Modules</a>
-          <ul class="dropdown">
-            <li><a href="module-introduction.html">Introduction</a></li>
-            <li><a href="module-launching-into-computing.html">Launching into Computing</a></li>
-            <li><a href="module-network-security.html">Network Security</a></li>
-            <li><a href="module-security-and-risk-management.html">Security and Risk Management</a></li>
-            <li><a href="module-advanced-oop.html">Advanced Object Oriented Design & Programming</a></li>
-            <li><a href="module-human-factor.html">The Human Factor</a></li>
-            <li><a href="module-digital-forensics.html">Principles of Digital Forensics and Cyber Law</a></li>
-            <li><a href="module-research-methods.html">Research Methods and Professional Practice</a></li>
-            <li><a href="module-msc-project.html">MSc Cyber Security Project</a></li>
-          </ul>
-        </li>
-        <li class="menu-item"><a href="cv.html">CV</a></li>
-        <li class="menu-item"><a href="contact.html">Contact</a></li>
+        <li class="menu-item"><a href="admin.html" aria-current="page">Admin</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container narrow">
-    <h1>Admin – Upload New Content</h1>
-    <p>This is a visual placeholder. Authentication and storage will be implemented later.</p>
-    <form class="admin-form" onsubmit="return false;">
-      <label>Module
-        <select>
-          <option>Introduction</option>
-          <option>Launching into Computing</option>
-          <option>Network Security</option>
-          <option>Security and Risk Management</option>
-          <option>Advanced Object Oriented Design & Programming</option>
-          <option>The Human Factor</option>
-          <option>Principles of Digital Forensics and Cyber Law</option>
-          <option>Research Methods and Professional Practice</option>
-          <option>MSc Cyber Security Project</option>
-        </select>
-      </label>
-      <label>Category
-        <select>
-          <option>Post</option>
-          <option>Essay</option>
-          <option>Report</option>
-          <option>Video</option>
-        </select>
-      </label>
-      <label>Title <input type="text" placeholder="Enter title" /></label>
-      <label>Date <input type="date" /></label>
-      <label>Content
-        <textarea rows="8" placeholder="Write or paste your content..."></textarea>
-      </label>
-      <label>Attachments <input type="file" multiple /></label>
-      <label>Feedback
-        <textarea rows="4" placeholder="Paste peer/tutor feedback (optional)"></textarea>
-      </label>
+  <main class="admin-wrap">
+    <div class="admin-grid">
+      <section class="admin-card">
+        <h2>Add / Edit Artefact</h2>
+        <form id="artefactForm" class="admin-form">
+          <label>Module
+            <select id="module">
+              <option value="module-introduction">Introduction</option>
+              <option value="module-launching-into-computing">Launching into Computing</option>
+              <option value="module-network-security">Network Security</option>
+              <option value="module-security-and-risk-management">Security and Risk Management</option>
+              <option value="module-advanced-oop">Advanced Object Oriented Design & Programming</option>
+              <option value="module-human-factor">The Human Factor</option>
+              <option value="module-digital-forensics">Principles of Digital Forensics and Cyber Law</option>
+              <option value="module-research-methods">Research Methods and Professional Practice</option>
+              <option value="module-msc-project">MSc Cyber Security Project</option>
+            </select>
+          </label>
+          <label>Type
+            <select id="type">
+              <option value="posts">Post</option>
+              <option value="essays">Essay</option>
+              <option value="reports">Report</option>
+              <option value="videos">Video</option>
+            </select>
+          </label>
+          <label>Title <input id="title" required /></label>
+          <label>Date <input id="date" type="date" /></label>
+          <label>Description <textarea id="desc" rows="4"></textarea></label>
+          <label>Learning Outcomes (comma separated) <input id="los" placeholder="LO1, LO2" /></label>
+          <label>Links (comma separated) <input id="links" placeholder="https://..., https://..." /></label>
+          <label>Feedback <textarea id="feedback" rows="3"></textarea></label>
+          <input type="hidden" id="editId" />
+          <div class="actions">
+            <button class="btn" type="submit">Save</button>
+            <button class="btn" type="button" id="reset">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-card">
+        <h2>Export / Data</h2>
+        <p class="muted">Data gemmes i browseren (localStorage) indtil du eksporterer JSON og uploader til GitHub.</p>
+        <div class="actions">
+          <button class="btn" id="exportCounts">Download counts.json</button>
+          <button class="btn" id="exportAll">Download all module JSON</button>
+          <button class="btn" id="clearData">Clear local data</button>
+        </div>
+        <p class="muted" style="margin-top:8px">Upload de downloadede filer til <code>assets/data/</code> i dit repo. Forsiden viser badges, og modul-sider kan hente data senere.</p>
+      </section>
+    </div>
+
+    <section class="admin-card">
+      <h2>Artefacts</h2>
       <div class="actions">
-        <button type="submit">Preview</button>
-        <button type="submit">Save (placeholder)</button>
+        <select id="filterModule">
+          <option value="">All modules</option>
+          <option value="module-introduction">Introduction</option>
+          <option value="module-launching-into-computing">Launching into Computing</option>
+          <option value="module-network-security">Network Security</option>
+          <option value="module-security-and-risk-management">Security and Risk Management</option>
+          <option value="module-advanced-oop">Advanced Object Oriented Design & Programming</option>
+          <option value="module-human-factor">The Human Factor</option>
+          <option value="module-digital-forensics">Principles of Digital Forensics and Cyber Law</option>
+          <option value="module-research-methods">Research Methods and Professional Practice</option>
+          <option value="module-msc-project">MSc Cyber Security Project</option>
+        </select>
+        <select id="filterType">
+          <option value="">All types</option>
+          <option value="posts">Post</option>
+          <option value="essays">Essay</option>
+          <option value="reports">Report</option>
+          <option value="videos">Video</option>
+        </select>
       </div>
-    </form>
+      <div id="list" class="list"></div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Jens Kolby — MSc Cyber Security e‑Portfolio</p>
+    <p>&copy; <span id="year"></span> J. K. — MSc Cyber Security e-Portfolio</p>
   </footer>
-  <script src="assets/js/main.js"></script>
+
+  <script src="assets/js/admin.js"></script>
 </body>
 </html>
