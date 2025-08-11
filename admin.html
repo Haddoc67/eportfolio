@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MSc Cyber Security e‑Portfolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta name="description" content="MSc Cyber Security e‑Portfolio for Your Name" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-title">Your Name</div>
+      <div class="brand-subtitle">MSc Cyber Security e-Portfolio</div>
+    </div>
+    <nav id="nav">
+      <ul class="menu">
+        <li class="menu-item"><a href="index.html">Home</a></li>
+        <li class="menu-item"><a href="about.html">About</a></li>
+        <li class="menu-item has-dropdown">
+          <a href="#">Modules</a>
+          <ul class="dropdown">
+            <li><a href="module-introduction.html">Introduction</a></li>
+            <li><a href="module-launching-into-computing.html">Launching into Computing</a></li>
+            <li><a href="module-network-security.html">Network Security</a></li>
+            <li><a href="module-security-and-risk-management.html">Security and Risk Management</a></li>
+            <li><a href="module-advanced-oop.html">Advanced Object Oriented Design & Programming</a></li>
+            <li><a href="module-human-factor.html">The Human Factor</a></li>
+            <li><a href="module-digital-forensics.html">Principles of Digital Forensics and Cyber Law</a></li>
+            <li><a href="module-research-methods.html">Research Methods and Professional Practice</a></li>
+            <li><a href="module-msc-project.html">MSc Cyber Security Project</a></li>
+          </ul>
+        </li>
+        <li class="menu-item"><a href="cv.html">CV</a></li>
+        <li class="menu-item"><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container narrow">
+    <h1>Admin – Upload New Content</h1>
+    <p>This is a visual placeholder. Authentication and storage will be implemented later.</p>
+    <form class="admin-form" onsubmit="return false;">
+      <label>Module
+        <select>
+          <option>Introduction</option>
+          <option>Launching into Computing</option>
+          <option>Network Security</option>
+          <option>Security and Risk Management</option>
+          <option>Advanced Object Oriented Design & Programming</option>
+          <option>The Human Factor</option>
+          <option>Principles of Digital Forensics and Cyber Law</option>
+          <option>Research Methods and Professional Practice</option>
+          <option>MSc Cyber Security Project</option>
+        </select>
+      </label>
+      <label>Category
+        <select>
+          <option>Post</option>
+          <option>Essay</option>
+          <option>Report</option>
+          <option>Video</option>
+        </select>
+      </label>
+      <label>Title <input type="text" placeholder="Enter title" /></label>
+      <label>Date <input type="date" /></label>
+      <label>Content
+        <textarea rows="8" placeholder="Write or paste your content..."></textarea>
+      </label>
+      <label>Attachments <input type="file" multiple /></label>
+      <label>Feedback
+        <textarea rows="4" placeholder="Paste peer/tutor feedback (optional)"></textarea>
+      </label>
+      <div class="actions">
+        <button type="submit">Preview</button>
+        <button type="submit">Save (placeholder)</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Your Name — MSc Cyber Security e‑Portfolio</p>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
