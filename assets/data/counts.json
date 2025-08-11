@@ -1,12 +1,8 @@
-
 {
-  "module-introduction": { "posts": 0, "essays": 0, "reports": 0, "videos": 0 },
-  "module-launching-into-computing": { "posts": 0, "essays": 0, "reports": 0, "videos": 0 },
-  "module-network-security": { "posts": 0, "essays": 0, "reports": 0, "videos": 0 },
-  "module-security-and-risk-management": { "posts": 0, "essays": 0, "reports": 0, "videos": 0 },
-  "module-advanced-oop": { "posts": 0, "essays": 0, "reports": 0, "videos": 0 },
-  "module-human-factor": { "posts": 0, "essays": 0, "reports": 0, "videos": 0 },
-  "module-digital-forensics": { "posts": 0, "essays": 0, "reports": 0, "videos": 0 },
-  "module-research-methods": { "posts": 0, "essays": 0, "reports": 0, "videos": 0 },
-  "module-msc-project": { "posts": 0, "essays": 0, "reports": 0, "videos": 0 }
+  "module-introduction": {
+    "posts": 0,
+    "essays": 13,
+    "reports": 0,
+    "videos": 0
+  }
 }
