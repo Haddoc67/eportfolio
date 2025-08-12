@@ -53,6 +53,12 @@ function exportAllModules() {
   Object.keys(data).forEach(mod => downloadJSON(`${mod}.json`, data[mod]));
 }
 
+// --- Helpers ---
+function normalizeUrl(u){
+  if (!u) return "";
+  return u.trim();
+}
+
 // --- UI rendering ---
 function renderList() {
   const data = loadData();
@@ -75,12 +81,14 @@ function renderList() {
       (data[mod][t] || []).forEach(item => {
         const row = document.createElement("div");
         row.className = "row";
+        const singleType = t.slice(0, -1); // posts -> post
         row.innerHTML = `
           <div>
-            <div><strong>${item.title}</strong></div>
-            <div class="muted">${mod} · <span class="pill pill-${t.slice(0,-1)}">${t.slice(0,-1).toUpperCase()}</span></div>
+            <div><strong>${item.title || "(untitled)"}</strong></div>
+            <div class="muted">${mod} · <span class="pill pill-${singleType}">${singleType.toUpperCase()}</span></div>
           </div>
           <div class="actions">
+            ${item.file_url ? `<a class="btn" href="${item.file_url}" target="_blank" rel="noopener">Open</a>` : ""}
             <button class="btn" data-act="edit" data-id="${item.id}" data-module="${mod}" data-type="${t}">Edit</button>
             <button class="btn" data-act="del"  data-id="${item.id}" data-module="${mod}" data-type="${t}">Delete</button>
           </div>
@@ -103,6 +111,11 @@ function loadIntoForm(module, type, id) {
   const item = (data[module][type] || []).find(x => x.id === id);
   if (!item) return;
 
+  // Backwards compatibility: if old `feedback` exists, map it to lecturer if new fields empty
+  if (item.feedback && !item.feedback_lecturer && !item.feedback_peers) {
+    item.feedback_lecturer = item.feedback;
+  }
+
   const f = document.getElementById("artefactForm");
   if (!f) return;
 
@@ -113,7 +126,12 @@ function loadIntoForm(module, type, id) {
   f.querySelector("#desc").value = item.description || "";
   f.querySelector("#los").value = (item.learning_outcomes || []).join(", ");
   f.querySelector("#links").value = (item.links || []).join(", ");
-  f.querySelector("#feedback").value = item.feedback || "";
+  const fileUrlEl = f.querySelector("#fileUrl");
+  if (fileUrlEl) fileUrlEl.value = item.file_url || "";
+  const fbL = f.querySelector("#feedbackLecturer");
+  const fbP = f.querySelector("#feedbackPeers");
+  if (fbL) fbL.value = item.feedback_lecturer || "";
+  if (fbP) fbP.value = item.feedback_peers || "";
   f.querySelector("#editId").value = item.id;
 }
 
@@ -144,7 +162,10 @@ document.addEventListener("DOMContentLoaded", () => {
         description: document.getElementById("desc").value.trim(),
         learning_outcomes: document.getElementById("los").value.split(",").map(s=>s.trim()).filter(Boolean),
         links: document.getElementById("links").value.split(",").map(s=>s.trim()).filter(Boolean),
-        feedback: document.getElementById("feedback").value.trim()
+        // New fields
+        file_url: normalizeUrl(document.getElementById("fileUrl")?.value || ""),
+        feedback_lecturer: (document.getElementById("feedbackLecturer")?.value || "").trim(),
+        feedback_peers:    (document.getElementById("feedbackPeers")?.value || "").trim()
       };
 
       const data = loadData();
