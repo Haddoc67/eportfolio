@@ -15,7 +15,7 @@
     width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0f1627;color:#e6eefc
   }
   .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-  .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#121a2b;color:#e6eefc;cursor:pointer}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#121a2b;color:#e6eefc;cursor:pointer;text-decoration:none}
   .btn:hover{background:#1a2439}
   .list{margin-top:12px}
   .list .row{display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;margin-bottom:8px}
@@ -69,7 +69,15 @@
           <label>Description <textarea id="desc" rows="4"></textarea></label>
           <label>Learning Outcomes (comma separated) <input id="los" placeholder="LO1, LO2" /></label>
           <label>Links (comma separated) <input id="links" placeholder="https://..., https://..." /></label>
-          <label>Feedback <textarea id="feedback" rows="3"></textarea></label>
+          <!-- Split feedback fields -->
+          <label>Feedback (Lecturer)
+            <textarea id="feedbackLecturer" rows="3"></textarea>
+          </label>
+          <label>Feedback (Peers)
+            <textarea id="feedbackPeers" rows="3"></textarea>
+          </label>
+          <!-- NEW: File URL for manual PDFs/images -->
+          <label>File URL <input id="fileUrl" placeholder="assets/pdfs/your-file.pdf" /></label>
           <input type="hidden" id="editId" />
           <div class="actions">
             <button class="btn" type="submit">Save</button>
@@ -80,14 +88,19 @@
 
       <section class="admin-card">
        <h2>Export / Data</h2>
-<p class="muted" style="margin-bottom: 10px;">Data is stored in your browser (localStorage) until you export the JSON and upload it to GitHub.</p>
-<ul>
-    <li><strong>Download counts.json</strong> – Saves the artefact counters for the homepage.</li>
-    <li><strong>Download all module JSON</strong> – Saves all artefacts for every module.</li>
-    <li><strong>Clear local data</strong> – Deletes all locally stored data in the browser.</li>
-</ul>
-<p class="muted">Upload the downloaded files to <code>assets/data/</code> in your repository. The homepage shows module badges, and the module pages can load and display the data.</p>
-
+       <p class="muted" style="margin-bottom: 10px;">Data is stored in your browser (localStorage) until you export the JSON and upload it to GitHub.</p>
+       <ul>
+         <li><strong>Download counts.json</strong> – Saves the artefact counters for the homepage.</li>
+         <li><strong>Download all module JSON</strong> – Saves all artefacts for every module.</li>
+         <li><strong>Clear local data</strong> – Deletes all locally stored data in the browser.</li>
+       </ul>
+       <p class="muted">Upload the downloaded files to <code>assets/data/</code> in your repository. The homepage shows module badges, and the module pages can load and display the data.</p>
+       <!-- NEW: actual buttons wired in admin.js -->
+       <div class="actions">
+         <button class="btn" type="button" id="exportCounts">Download counts.json</button>
+         <button class="btn" type="button" id="exportAll">Download all module JSON</button>
+         <button class="btn" type="button" id="clearData">Clear local data</button>
+       </div>
       </section>
     </div>
 
@@ -119,7 +132,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> J. K. — MSc Cyber Security e-Portfolio</p>
+    <p>&copy; <span id="year"></span> Jens Kolby — MSc Cyber Security e-Portfolio</p>
   </footer>
 
   <script src="assets/js/admin.js"></script>
