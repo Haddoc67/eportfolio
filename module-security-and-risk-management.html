@@ -180,8 +180,83 @@
         Seminar preparation based on Jbair et al. (2022), focusing on CPS threat modelling,
         interdependencies and scenario-based risk assessment.
     </p>
+        <h3>Unit 4 – Seminar: Risk Identification and Modelling</h3>
 
-    <!-- Unit 10 Seminar -->
+<p><em>
+A. What are the key elements and interdependencies in a cyber-physical system that must be
+captured in a comprehensive threat model, and why are they critical for accurate risk analysis?
+</em></p>
+
+<p>
+A comprehensive CPS threat model must capture both cyber and physical components, including
+sensors, actuators, PLCs, networks, software and human interaction, as well as the dependencies
+between them. Interdependencies are critical because failures or attacks in one layer can
+propagate across the system and cause wider operational or physical impact. Unlike traditional
+IT systems, CPS risk analysis must also include safety, not only confidentiality, integrity and
+availability. This is important because cyber incidents in CPS can directly affect physical
+processes, equipment and human safety, making incomplete modelling likely to underestimate risk.
+</p>
+<p><em>
+B. How can threat modelling help identify attack entry points and system vulnerabilities in
+cyber-physical energy systems, and what are the challenges in doing so effectively?
+</em></p>
+
+<p>
+Threat modelling supports the identification of attack entry points by mapping the architecture
+and data flows across IT, OT and the physical process. When components such as sensors, PLCs,
+HMIs, networks and external connections are modelled together, typical entry points become
+visible, for example remote access paths, engineering workstations, insecure industrial protocols
+or interfaces between IT and OT networks.
+</p>
+
+<p>
+By linking the system architecture to known attacker tactics, techniques and procedures (TTPs),
+such as those described in MITRE ICS ATT&CK, threat modelling highlights realistic attack paths
+and vulnerabilities that would not be captured through a traditional IT-focused assessment.
+</p>
+
+<p>
+The main challenges are the complexity of CPS environments, limited or outdated system
+documentation, the presence of legacy systems that were not designed with security in mind, and
+the dynamic nature of physical processes. In addition, effective threat modelling often requires
+coordination between IT, OT, safety and operational teams, which can be difficult to achieve in
+practice.
+</p>
+
+<p><em>
+C. In the context of CPS threat modelling, how can scenario-specific metrics and risk assessment
+methodologies be used to prioritise vulnerabilities and guide the development of targeted
+security countermeasures?
+</em></p>
+
+<p>
+Scenario-specific metrics allow risk to be assessed based on the actual CPS context rather than
+generic assumptions. By combining attack likelihood, system exposure and impact, including safety
+impact in addition to traditional CIA considerations, vulnerabilities can be ranked according to
+their real operational significance.
+</p>
+
+<p>
+This prioritisation enables security efforts to focus on vulnerabilities that are both realistically
+exploitable and capable of causing the most serious consequences. As a result, countermeasures
+can be targeted, for example, through network segmentation, tighter access control, or protection
+of specific control logic, instead of applying broad and inefficient security controls.
+</p>
+
+<p>
+Overall, scenario-based risk assessment ensures that mitigation efforts are directed towards
+reducing real-world risk rather than theoretical risk.
+</p>
+
+<h4>Reference</h4>
+
+<p>
+Jbair, M., Ahmad, B., Maple, C. and Harrison, R. (2022) <em>Threat modelling for industrial cyber
+physical systems in the era of smart manufacturing</em>. <em>Computers in Industry</em>, 137, 103611.
+https://doi.org/10.1016/j.compind.2022.103611
+</p>
+
+    
     <h3>Unit 10 – DR Solutions Design and Review</h3>
     <p>
         Seminar preparation addressing cloud vendor lock-in and disaster recovery design,
