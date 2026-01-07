@@ -256,12 +256,70 @@ physical systems in the era of smart manufacturing</em>. <em>Computers in Indust
 https://doi.org/10.1016/j.compind.2022.103611
 </p>
 
-    
-    <h3>Unit 10 – DR Solutions Design and Review</h3>
-    <p>
-        Seminar preparation addressing cloud vendor lock-in and disaster recovery design,
-        based on Kumar (2024) and Corbari et al. (2024).
-    </p>
+<h3>Unit 10 – Seminar: DR Solutions Design and Review</h3>
+
+<p><em>
+What are some of the main vendor lock-in issues the authors identify? How would you mitigate them?
+</em></p>
+
+<p>
+Kumar (2024) describes vendor lock-in as dependency on cloud-provider-specific services such as
+proprietary APIs, platforms and management tools, which can reduce flexibility and make migration
+or recovery outside a single provider more difficult.
+</p>
+
+<p>
+From my perspective, vendor lock-in becomes problematic when it effectively acts as a single
+point of failure. Even if systems are technically resilient within one cloud platform, recovery
+options are still constrained by reliance on a single provider and control plane.
+</p>
+
+<p>
+In this context, vendor lock-in should be understood as a trade-off rather than a design failure.
+A controlled level of dependency may be acceptable where it supports availability and recovery
+objectives, as long as the risk is recognised and actively managed. Corbari et al. (2024) do not
+argue against cloud dependencies, but provide a way to identify which dependencies actually
+matter for critical operations. This makes it possible to focus mitigation efforts where vendor
+lock-in would have real mission or business impact.
+</p>
+
+<p><em>
+What are some security concerns with the modern cloud? How can these be mitigated?
+</em></p>
+
+<p>
+When considering security concerns in the modern cloud, the main issue is not a lack of security
+mechanisms, but how easily misconfigurations and unclear responsibility can scale their impact.
+Because cloud platforms rely heavily on centralised control planes and shared services,
+relatively small configuration errors or access issues can affect multiple systems at once.
+</p>
+
+<p>
+From my perspective, the challenge is therefore less about adding more security controls and more
+about understanding which failures would actually have meaningful operational consequences.
+While Mission Thread Analysis (MTA) offers a structured way of reasoning about critical
+dependencies and mission impact (Corbari et al., 2024), it is primarily developed for military
+and highly structured operational environments.
+</p>
+
+<p>
+In a more typical organisational context, the underlying idea remains relevant, even if the
+framework itself is not directly adopted. Security and disaster recovery decisions should be
+guided by an understanding of which systems and services matter most, rather than applying the
+same controls across all cloud resources.
+</p>
+
+<h4>References</h4>
+
+<p>
+Kumar, A. (2024) <i>Cloud vendor lock-in: Identify, strategies and mitigate</i>.
+</p>
+
+<p>
+Corbari, G.I., Khatod, N., Popiak, J.F. and Sinclair, P. (2024) ‘Mission Thread Analysis:
+Establishing a Common Framework’, <i>The Cyber Defense Review</i>, 9(1), pp. 37–54.
+</p>
+
 </div>
 
 
@@ -382,6 +440,8 @@ https://doi.org/10.1016/j.compind.2022.103611
   I will place greater emphasis on defining responsibilities, validating controls
   through evidence, and aligning security practices with recognised frameworks.
 </p>
+
+
             
             <h3>Unit 6 – Wiki Submission</h3>
             <p>This wiki summarises the applicable frameworks and recommended tests for different organisational contexts.</p>
