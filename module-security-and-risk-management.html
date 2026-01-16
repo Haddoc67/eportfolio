@@ -42,7 +42,8 @@
     <article class="module-page">
       <header>
         <h1>Security and Risk Management</h1>
-        <p class="module-intro">Brief overview of the module and focus areas.</p>
+        <p class="module-intro">A comprehensive exploration of security and risk management concepts, methods and practical applications.
+</p>
       </header>
 
       <section id="reflection">
@@ -54,18 +55,51 @@
             <li><strong>So what:</strong> Why does it matter (impact, context)?</li>
             <li><strong>What next:</strong> How will I apply or improve?</li>
           </ul>
+          <h4>What?</h4>
+
+<p>At the beginning of this module, my understanding of security and risk management was mainly focused on identifying threats and applying controls to reduce risk. In the early units (Units 1–3), my work reflected a traditional view of risk, in which the main task was to analyse vulnerabilities and suggest suitable mitigations.</p>
+
+<p>Unit 4 introduced threat modelling for cyber-physical systems and highlighted the importance of understanding dependencies among cyber, physical, and human components. The work by Jbair et al. (2022) showed that risks cannot be assessed accurately without considering how failures or attacks can propagate across interconnected systems. This was also the first time safety was explicitly discussed as part of impact, alongside confidentiality, integrity and availability.</p>
+
+<p>In Unit 6, I applied security standards such as GDPR and PCI-DSS to an EU-based e-commerce organisation with low security maturity. This helped me understand that compliance is not just about meeting formal requirements, but also about governance, documentation and the ability to demonstrate that controls are in place (ICO, 2020; PCI Security Standards Council, 2020). I also considered ISO/IEC 27001 as a supporting framework.</p>
+
+<p>Unit 8 focused on quantitative risk modelling, including attack trees, Markov models and Monte Carlo simulation. Learning how these techniques can be used to estimate attack likelihood and success probability was useful, but it also made clear that quantitative models depend heavily on assumptions, especially when human behaviour is involved (Aijaz and Nazir, 2024). I found Monte Carlo simulation particularly helpful for showing uncertainty and variability in risk estimates.</p>
+
+<p>In Unit 10, the focus shifted to disaster recovery and cloud dependency. Kumar (2024) presented vendor lock-in as a strategic risk that can affect resilience and recovery options. Rather than treating vendor lock-in as something that must always be avoided, I began to see it as a trade-off that needs to be managed. Corbari et al. (2024) introduced Mission Thread Analysis to understand mission-critical dependencies. I found the concept useful for prioritisation, while also recognising that it is mainly developed for military or highly structured operational environments.</p>
+
+<p>The group assessment feedback confirmed that my understanding of risk was strong, but also highlighted weaknesses related to application, criticality and the use of recent sources. This feedback influenced how I approached later units.</p>
+
+<h4>So what?</h4>
+
+<p>The most important learning from this module is that security and risk management is not about finding perfect controls, but about making informed decisions under uncertainty. Threat modelling showed that risks are often systemic, meaning that addressing individual vulnerabilities in isolation can miss the bigger picture (Jbair et al., 2022).</p>
+
+<p>Working with security standards in Unit 6 made it clear that compliance depends on organisational capability as much as on technical controls. Even when parts of the scope are outsourced, such as payment processing, responsibility for governance and oversight remains with the organisation.</p>
+
+<p>Quantitative modelling in Unit 8 reinforced the need for caution when interpreting risk scores. Techniques such as attack trees, Markov models, and Monte Carlo simulation help structure thinking and compare scenarios, but they do not eliminate uncertainty.</p>
+
+<p>In the group work, my main contribution was to refine and structure the analysis. I also produced most of the diagrams, which helped make risks and mitigation choices easier to understand.</p>
+
+<h4>What next?</h4>
+
+<p>From a professional development perspective, this module has influenced how I approach both individual and collaborative work. In future projects, I will establish clear communication channels early.</p>
+
+<p>I am also more conscious of the need to define the scope clearly from the outset and to communicate technical details in a clear, accessible way.</p>
+
+<p>Overall, this module has helped me move towards a more mature and realistic approach to security and risk management. It also reinforced the role of theory as a necessary support for practice, helping structure analysis and justify risk-related decisions.</p>
+
         </details>
        
       </section>
 
-      
+     
 
       <section id="evidence">
         <h2>Evidence / Artefacts</h2>
         <div class="tabs">
           <button class="tab-link" data-target="#tab-posts">Posts</button>
-          <button class="tab-link" data-target="#tab-essays">Essays</button>
+          <button class="tab-link" data-target="#tab-Seminars">Seminars</button>
           <button class="tab-link" data-target="#tab-reports">Reports</button>
+          <button class="tab-link" data-target="#tab-feedback">Feedback</button>
         </div>
 
         <div class="tab-panels">
@@ -164,10 +198,300 @@
 
             
           </div>
+    
+    <div id="tab-Seminars" class="tab-panel">
+    <h2>Seminars</h2>
 
-          <div id="tab-essays" class="tab-panel">
-            <p class="empty">No essays available yet.</p>
-          </div>
+    <p>
+        This section contains seminar preparation and workshop activities completed
+        throughout the module.
+    </p>
+
+    
+    <h3>Unit 4 – Risk Identification and Modelling</h3>
+    <p>
+        Seminar preparation based on Jbair et al. (2022), focusing on CPS threat modelling,
+        interdependencies and scenario-based risk assessment.
+    </p>
+      
+<p><em>
+A. What are the key elements and interdependencies in a cyber-physical system that must be
+captured in a comprehensive threat model, and why are they critical for accurate risk analysis?
+</em></p>
+
+<p>
+A comprehensive CPS threat model must capture both cyber and physical components, including
+sensors, actuators, PLCs, networks, software and human interaction, as well as the dependencies
+between them. Interdependencies are critical because failures or attacks in one layer can
+propagate across the system and cause wider operational or physical impact. Unlike traditional
+IT systems, CPS risk analysis must also include safety, not only confidentiality, integrity and
+availability. This is important because cyber incidents in CPS can directly affect physical
+processes, equipment and human safety, making incomplete modelling likely to underestimate risk.
+</p>
+<p><em>
+B. How can threat modelling help identify attack entry points and system vulnerabilities in
+cyber-physical energy systems, and what are the challenges in doing so effectively?
+</em></p>
+
+<p>
+Threat modelling supports the identification of attack entry points by mapping the architecture
+and data flows across IT, OT and the physical process. When components such as sensors, PLCs,
+HMIs, networks and external connections are modelled together, typical entry points become
+visible, for example, remote access paths, engineering workstations, insecure industrial protocols
+or interfaces between IT and OT networks.
+</p>
+
+<p>
+By linking the system architecture to known attacker tactics, techniques and procedures (TTPs),
+such as those described in MITRE ICS ATT&CK, threat modelling highlights realistic attack paths
+and vulnerabilities that would not be captured through a traditional IT-focused assessment.
+</p>
+
+<p>
+The main challenges are the complexity of CPS environments, limited or outdated system
+documentation, the presence of legacy systems that were not designed with security in mind, and
+the dynamic nature of physical processes. In addition, effective threat modelling often requires
+coordination between IT, OT, safety and operational teams, which can be difficult to achieve in
+practice.
+</p>
+
+<p><em>
+C. In the context of CPS threat modelling, how can scenario-specific metrics and risk assessment
+methodologies be used to prioritise vulnerabilities and guide the development of targeted
+security countermeasures?
+</em></p>
+
+<p>
+Scenario-specific metrics allow risk to be assessed based on the actual CPS context rather than
+generic assumptions. By combining attack likelihood, system exposure and impact, including safety
+impact in addition to traditional CIA considerations, vulnerabilities can be ranked according to
+their real operational significance.
+</p>
+
+<p>
+This prioritisation enables security efforts to focus on vulnerabilities that are both realistically
+exploitable and capable of causing the most serious consequences. As a result, countermeasures
+can be targeted, for example, through network segmentation, tighter access control, or protection
+of specific control logic, instead of applying broad and inefficient security controls.
+</p>
+
+<p>
+Overall, scenario-based risk assessment ensures that mitigation efforts are directed towards
+reducing real-world risk rather than theoretical risk.
+</p>
+
+<h4>Reference</h4>
+
+<p>
+Jbair, M., Ahmad, B., Maple, C. and Harrison, R. (2022) <em>Threat modelling for industrial cyber
+physical systems in the era of smart manufacturing</em>. <em>Computers in Industry</em>, 137, 103611.
+https://doi.org/10.1016/j.compind.2022.103611
+</p>
+
+<h3>Unit 6 – Seminar: Security Standards</h3>
+
+<p>
+This seminar preparation focused on identifying and evaluating which security and compliance standards would apply to an EU-based online pet store operating an e-commerce platform.
+</p>
+
+<p><em>
+Which of the standards discussed in the sources above would apply to the organisation discussed in the assessment?
+</em></p>
+
+<p>
+The analysis identified GDPR and PCI-DSS as the primary applicable standards. GDPR applies because the organisation collects and processes personal data relating to EU customers, including account details, delivery information and order history (ICO, 2020). PCI-DSS applies because the organisation accepts online card payments and must ensure secure handling of cardholder data, even when using a third-party payment provider (PCI Security Standards Council, 2020). ISO/IEC 27001 was also considered as a relevant best-practice framework to support structured information security management, although it is not legally required.
+</p>
+
+<p><em>
+Evaluate the company against the appropriate standards and decide how would you check if standards were being met?
+</em></p>
+
+<p>
+At a low security maturity level, the organisation meets only basic expectations of these standards. Under GDPR, documentation of data processing activities is limited, access controls are weak and retention practices are unclear, which indicates gaps in meeting accountability requirements (ICO, 2020). While the use of a third-party payment provider reduces direct PCI-DSS scope, the organisation lacks documented procedures, regular security scanning and strong administrative access controls (PCI Security Standards Council, 2020). Against ISO/IEC 27001, there is no formal risk assessment, asset listing or defined security roles, with only ad hoc technical controls in place (Sutton, 2021).
+</p>
+
+<p>
+Compliance would be assessed by reviewing the organisation’s privacy notice, any internal records of data processing and the implementation of basic technical controls such as access control and encryption (ICO, 2020). Payment security would be verified by confirming the compliance status of the payment provider and ensuring that no cardholder data is processed internally (PCI Security Standards Council, 2020). Foundational ISO/IEC 27001 practices would be assessed through the presence of asset lists, basic risk awareness and assigned security responsibilities (Sutton, 2021).
+</p>
+
+<p><em>
+What would your recommendations be to meet those standards?
+</em></p>
+
+<p>
+Recommended improvements include documenting data processing activities, strengthening access controls, applying consistent encryption, enabling multi-factor authentication for administrative access and introducing basic vulnerability scanning. To support longer-term maturity, the organisation should establish a simple asset inventory, assign security responsibility and conduct an initial risk assessment aligned with ISO/IEC 27001 principles (Sutton, 2021).
+</p>
+
+<p><em>
+What assumptions have you made?
+</em></p>
+
+<p>
+This analysis is based on the assumption that the organisation operates within the EU, processes customer personal data, uses a third-party payment provider for online card payments and currently has a low security maturity level with no formal ISO/IEC 27001 framework in place.
+</p>
+
+<h4>References</h4>
+
+<p>
+ICO (2020) <i>Guide to the General Data Protection Regulation (GDPR)</i>. Available at: https://ico.org.uk/for-organisations/guide-to-data-protection/ (Accessed: 7 December 2025).
+</p>
+
+<p>
+PCI Security Standards Council (2020) <i>PCI Security Standards Overview</i>. Available at: https://www.pcisecuritystandards.org/ (Accessed: 7 December 2025).
+</p>
+
+<p>
+Sutton, D. (2021) <i>Information Risk Management</i>. 2nd edn. London: Routledge.
+</p>
+
+<h4>Reflection (3W Model)</h4>
+
+<p>
+What: I developed a clearer understanding of how different regulatory and industry standards apply depending on organisational context, and how security maturity affects an organisation’s ability to meet those requirements in practice.
+</p>
+
+<p>
+So what: This is important because compliance cannot be treated as a checklist exercise. Without adequate documentation, ownership and technical controls, organisations remain exposed to regulatory and operational risk even when external providers are used to reduce scope.
+</p>
+
+<p>
+What next: In future risk assessments, I will evaluate not only which standards apply but also whether the organisation has the operational capability to meet them. I will place greater emphasis on defining responsibilities, validating controls through evidence and aligning security practices with recognised frameworks.
+</p>
+      
+      
+
+<h3>Unit 8 – Seminar: Quantitative Risk Modelling</h3>
+<p>
+    Seminar preparation based on Aijaz and Nazir (2024), focusing on quantitative modelling of social engineering threats using attack trees and Markov models.
+</p>
+      
+
+<p><em>
+What are the main challenges in modelling and evaluating the outcomes of Social Engineering Threats, and how does this study attempt to address them?
+</em></p>
+
+<p>
+Social engineering is hard to model because human behaviour is unpredictable, and data on persuasion is limited.
+</p>
+
+<p>
+The study addresses this by using attack trees to model how often attacks occur and Markov chains to model how likely they are to succeed (Aijaz and Nazir, 2024).
+</p>
+
+<p><em>
+How do persuasion principles and modalities contribute to the success of SETs, and why is it important to analyse them systematically?
+</em></p>
+
+<p>
+Persuasion principles (authority, reciprocity etc.) and modalities (email, phone, face-to-face) strongly influence whether victims comply (Aijaz and Nazir, 2024).
+</p>
+
+<p>
+Systematic analysis matters because SETs succeed mainly through psychological manipulation, not technology.
+</p>
+
+<p><em>
+What role do the Attack Tree Model and Markov Chain Model play in estimating the Attack Occurrence Probability (AOP) and Attack Success Probability (ASP) of SETs?
+</em></p>
+
+<p>
+The attack tree calculates the probability an attack occurs (AOP) (Aijaz and Nazir, 2024).
+</p>
+
+<p>
+The Markov chain calculates the probability it succeeds (ASP) (Aijaz and Nazir, 2024).
+</p>
+
+<p>
+Together they give a full risk picture.
+</p>
+
+<p><em>
+In what ways can the findings of this study support the development of effective policy frameworks for mitigating social engineering threats in information systems?
+</em></p>
+
+<p>
+The results help organisations focus training and policies on the most common and most effective SET techniques, making defences more targeted and evidence-based (Aijaz and Nazir, 2024).
+</p>
+
+<h4>References</h4>
+
+<p>
+Aijaz, M. and Nazir, M. (2024) ‘Modelling and analysis of social engineering threats using the attack tree and the Markov model’, <i>International Journal of Information Technology</i>, 16(2), pp. 1231–1238.
+</p>
+      
+
+
+<h3>Unit 10 – Seminar: DR Solutions Design and Review</h3>
+<p>
+    Seminar preparation based on Kumar (2024) and Corbari et al. (2024), focusing on cloud vendor lock-in, disaster recovery design and mission-critical dependencies.
+</p>
+      
+
+<p><em>
+What are some of the main vendor lock-in issues the authors identify? How would you mitigate them?
+</em></p>
+
+<p>
+Kumar (2024) describes vendor lock-in as dependency on cloud-provider-specific services such as
+proprietary APIs, platforms and management tools, which can reduce flexibility and make migration
+or recovery outside a single provider more difficult.
+</p>
+
+<p>
+From my perspective, vendor lock-in becomes problematic when it effectively acts as a single
+point of failure. Even if systems are technically resilient within one cloud platform, recovery
+options are still constrained by reliance on a single provider and control plane.
+</p>
+
+<p>
+In this context, vendor lock-in should be understood as a trade-off rather than a design failure.
+A controlled level of dependency may be acceptable where it supports availability and recovery
+objectives, as long as the risk is recognised and actively managed. Corbari et al. (2024) do not
+argue against cloud dependencies, but provide a way to identify which dependencies actually
+matter for critical operations. This makes it possible to focus mitigation efforts where vendor
+lock-in would have real mission or business impact.
+</p>
+
+<p><em>
+What are some security concerns with the modern cloud? How can these be mitigated?
+</em></p>
+
+<p>
+When considering security concerns in the modern cloud, the main issue is not a lack of security
+mechanisms, but how easily misconfigurations and unclear responsibility can scale their impact.
+Because cloud platforms rely heavily on centralised control planes and shared services,
+relatively small configuration errors or access issues can affect multiple systems at once.
+</p>
+
+<p>
+From my perspective, the challenge is therefore less about adding more security controls and more
+about understanding which failures would actually have meaningful operational consequences.
+While Mission Thread Analysis (MTA) offers a structured way of reasoning about critical
+dependencies and mission impact (Corbari et al., 2024), it is primarily developed for military
+and highly structured operational environments.
+</p>
+
+<p>
+In a more typical organisational context, the underlying idea remains relevant, even if the
+framework itself is not directly adopted. Security and disaster recovery decisions should be
+guided by an understanding of which systems and services matter most, rather than applying the
+same controls across all cloud resources.
+</p>
+
+<h4>References</h4>
+
+<p>
+Kumar, A. (2024) <i>Cloud vendor lock-in: Identify, strategies and mitigate</i>.
+</p>
+
+<p>
+Corbari, G.I., Khatod, N., Popiak, J.F. and Sinclair, P. (2024) ‘Mission Thread Analysis:
+Establishing a Common Framework’, <i>The Cyber Defense Review</i>, 9(1), pp. 37–54.
+</p>
+
+</div>
+
 
           <div id="tab-reports" class="tab-panel">
             <h3>GDPR Case Study – Unit 5</h3>
@@ -206,86 +530,7 @@
   logging and access control, aligned with GDPR accountability and security
   principles.
 </p>
-<h3>Unit 6 Seminar – Security Standards</h3>
 
-<p>
-  This seminar preparation focused on identifying and evaluating which security
-  and compliance standards would apply to an EU-based online pet store operating
-  an e-commerce platform.
-</p>
-
-<p>
-  The analysis identified GDPR and PCI-DSS as the primary applicable standards.
-  GDPR applies because the organisation collects and processes personal data
-  relating to EU customers, including account details, delivery information, and
-  order history. PCI-DSS applies because the organisation accepts online card
-  payments and must ensure secure handling of cardholder data, even when using a
-  third-party payment provider. ISO/IEC 27001 was also considered as a relevant
-  best-practice framework to support structured information security management,
-  although it is not legally required.
-</p>
-
-<p>
-  At a low security maturity level, the organisation meets only basic expectations
-  of these standards. Under GDPR, documentation of data processing activities is
-  limited, access controls are weak, and retention practices are unclear. While
-  the use of a third-party payment provider reduces direct PCI-DSS scope, the
-  organisation lacks documented procedures, regular security scanning, and strong
-  administrative access controls. Against ISO/IEC 27001, there is no formal risk
-  assessment, asset listing, or defined security roles, with only ad hoc technical
-  controls in place.
-</p>
-
-<p>
-  Compliance would be assessed by reviewing the organisation’s privacy notice,
-  any internal records of data processing, and the implementation of basic
-  technical controls such as access control and encryption. Payment security
-  would be verified by confirming the compliance status of the payment provider
-  and ensuring that no cardholder data is processed internally. Foundational
-  ISO/IEC 27001 practices would be assessed through the presence of asset lists,
-  basic risk awareness, and assigned security responsibilities.
-</p>
-
-<p>
-  Recommended improvements include documenting data processing activities,
-  strengthening access controls, applying consistent encryption, enabling
-  multi-factor authentication for administrative access, and introducing basic
-  vulnerability scanning. To support longer-term maturity, the organisation
-  should establish a simple asset inventory, assign security responsibility, and
-  conduct an initial risk assessment.
-</p>
-
-<p>
-  This analysis is based on the assumption that the organisation operates within
-  the EU processes customer personal data, uses a third-party payment provider
-  for online card payments, and currently has a low security maturity level with
-  no formal ISO/IEC 27001 framework in place.
-</p>
-
-<h4>Reflection (3W Model)</h4>
-
-<p>
-  <strong>What:</strong>
-  I developed a clearer understanding of how different regulatory and industry
-  standards apply depending on organisational context, and how security maturity
-  affects an organisation’s ability to meet those requirements in practice.
-</p>
-
-<p>
-  <strong>So what:</strong>
-  This is important because compliance cannot be treated as a checklist exercise.
-  Without adequate documentation, ownership, and technical controls, organisations
-  remain exposed to regulatory and operational risk even when external providers
-  are used to reduce scope.
-</p>
-
-<p>
-  <strong>What next:</strong>
-  In future risk assessments, I will evaluate not only which standards apply but
-  also whether the organisation has the operational capability to meet them.
-  I will place greater emphasis on defining responsibilities, validating controls
-  through evidence, and aligning security practices with recognised frameworks.
-</p>
             
             <h3>Unit 6 – Wiki Submission</h3>
             <p>This wiki summarises the applicable frameworks and recommended tests for different organisational contexts.</p>
@@ -359,6 +604,30 @@ organisational context.
 
 
           </div>
+          <div id="tab-feedback" class="tab-panel">
+  <h3>Tutor and Peer Feedback</h3>
+
+  <p>
+    This section presents formal tutor and peer feedback received for assessed
+    group work during the module. The feedback is presented as supporting
+    evidence and is not analysed or reflected upon in this section.
+  </p>
+
+  <h4>Unit 6 – Group Risk Project</h4>
+
+  <ul>
+    <li><strong>Peer review score:</strong> 93%</li>
+    <li><strong>Tutor grade:</strong> 83</li>
+  </ul>
+
+  <ul>
+    <li><strong>Knowledge and understanding:</strong> Excellent understanding of risk across both assessment stages and mitigation advice.</li>
+    <li><strong>Application:</strong> Additional case examples and more recent technical sources were recommended.</li>
+    <li><strong>Criticality:</strong> Clearer acknowledgement of limitations and gaps in proposed mitigation plans was advised.</li>
+    <li><strong>Structure and presentation:</strong> Strong structure and effective visualisation.</li>
+  </ul>
+</div>
+
         </div>
       </section>
 
